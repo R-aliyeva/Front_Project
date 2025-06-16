@@ -48,20 +48,23 @@
 	<script src="js/vendor/modernizr-3.11.2.min.js"></script>
 	<style>
 		.product-img {
-  width: 100%;
-  height: 250px; /* Sabit hündürlük */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #f7f7f7; /* İstəyə bağlı arxa fon */
-}
+			width: 100%;
+			height: 250px;
+			/* Sabit hündürlük */
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+			background: #f7f7f7;
+			/* İstəyə bağlı arxa fon */
+		}
 
-.product-img img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* Şəkli deformasiyasız yerləşdirir */
-}
+		.product-img img {
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: contain;
+			/* Şəkli deformasiyasız yerləşdirir */
+		}
 	</style>
 </head>
 
@@ -761,46 +764,7 @@
 						<!-- Tab panes -->
 						<div class="tab-content">
 							<div class="tab-pane active" id="new-arrivals">
-								<!-- <div class="row"> -->
-								<!-- Single-product start -->
-								<!-- <div class="col-xl-3 col-lg-4 col-md-6">
-										<div class="single-product">
-											<div class="product-img">
-												<span class="pro-label new-label">new</span>
-												<span class="pro-price-2">$ 56.20</span>
-												<a href="single-product.html"><img src="img/product/6.jpg" alt="" /></a>
-											</div>
-											<div class="product-info clearfix text-center">
-												<div class="fix">
-													<h4 class="post-title"><a href="#">dummy Product name</a></h4>
-												</div>
-												<div class="fix">
-													<span class="pro-rating">
-														<a href="#"><i class="zmdi zmdi-star"></i></a>
-														<a href="#"><i class="zmdi zmdi-star"></i></a>
-														<a href="#"><i class="zmdi zmdi-star"></i></a>
-														<a href="#"><i class="zmdi zmdi-star-half"></i></a>
-														<a href="#"><i class="zmdi zmdi-star-half"></i></a>
-													</span>
-												</div>
-												<div class="product-action clearfix">
-													<a href="wishlist.html" data-bs-toggle="tooltip"
-														data-placement="top" title="Wishlist"><i
-															class="zmdi zmdi-favorite-outline"></i></a>
-													<a href="#" data-bs-toggle="modal" data-bs-target="#productModal"
-														title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
-													<a href="#" data-bs-toggle="tooltip" data-placement="top"
-														title="Compare"><i class="zmdi zmdi-refresh"></i></a>
-													<a href="cart.html" data-bs-toggle="tooltip" data-placement="top"
-														title="Add To Cart"><i
-															class="zmdi zmdi-shopping-cart-plus"></i></a>
-												</div>
-											</div>
-										</div>
-									</div> -->
-								<!-- Single-product end -->
 
-								<!-- </div> -->
 							</div>
 						</div>
 					</div>
@@ -1139,7 +1103,7 @@
 											</div>
 											<div class="product-info clearfix text-center">
 												<div class="fix">
-													<h4 class="post-title"><a href="#">dummy Product name</a></h4>
+													<h4 class="post-title"><a href="#">${product.title}e</a></h4>
 												</div>
 												<div class="fix">
 													<span class="pro-rating">
