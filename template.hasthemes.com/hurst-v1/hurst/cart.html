@@ -340,96 +340,7 @@
 														</tr>
 													</thead>
 													<tbody id="cart-body">
-														<tr>
-															<td class="product-thumbnail  text-left">
-																<!-- Single-product start -->
-																<div class="single-product">
-																	<div class="product-img">
-																		<a href="single-product.html"><img
-																				src="img/product/2.jpg" alt="" /></a>
-																	</div>
-																	<div class="product-info">
-																		<h4 class="post-title"><a
-																				class="text-light-black" href="#">dummy
-																				product name</a></h4>
-																		<p class="mb-0">Color : Black</p>
-																		<p class="mb-0">Size : SL</p>
-																	</div>
-																</div>
-																<!-- Single-product end -->
-															</td>
-															<td class="product-price">$56.00</td>
-															<td class="product-quantity">
-																<div class="cart-plus-minus">
-																	<input type="text" value="02" name="qtybutton"
-																		class="cart-plus-minus-box">
-																</div>
-															</td>
-															<td class="product-subtotal">$112.00</td>
-															<td class="product-remove">
-																<a href="#"><i class="zmdi zmdi-close"></i></a>
-															</td>
-														</tr>
-														<tr>
-															<td class="product-thumbnail  text-left">
-																<!-- Single-product start -->
-																<div class="single-product">
-																	<div class="product-img">
-																		<a href="single-product.html"><img
-																				src="img/product/12.jpg" alt="" /></a>
-																	</div>
-																	<div class="product-info">
-																		<h4 class="post-title"><a
-																				class="text-light-black" href="#">dummy
-																				product name</a></h4>
-																		<p class="mb-0">Color : Black</p>
-																		<p class="mb-0">Size : SL</p>
-																	</div>
-																</div>
-																<!-- Single-product end -->
-															</td>
-															<td class="product-price">$56.00</td>
-															<td class="product-quantity">
-																<div class="cart-plus-minus">
-																	<input type="text" value="02" name="qtybutton"
-																		class="cart-plus-minus-box">
-																</div>
-															</td>
-															<td class="product-subtotal">$112.00</td>
-															<td class="product-remove">
-																<a href="#"><i class="zmdi zmdi-close"></i></a>
-															</td>
-														</tr>
-														<tr>
-															<td class="product-thumbnail  text-left">
-																<!-- Single-product start -->
-																<div class="single-product">
-																	<div class="product-img">
-																		<a href="single-product.html"><img
-																				src="img/product/6.jpg" alt="" /></a>
-																	</div>
-																	<div class="product-info">
-																		<h4 class="post-title"><a
-																				class="text-light-black" href="#">dummy
-																				product name</a></h4>
-																		<p class="mb-0">Color : Black</p>
-																		<p class="mb-0">Size : SL</p>
-																	</div>
-																</div>
-																<!-- Single-product end -->
-															</td>
-															<td class="product-price">$56.00</td>
-															<td class="product-quantity">
-																<div class="cart-plus-minus">
-																	<input type="text" value="02" name="qtybutton"
-																		class="cart-plus-minus-box">
-																</div>
-															</td>
-															<td class="product-subtotal">$112.00</td>
-															<td class="product-remove">
-																<a href="#"><i class="zmdi zmdi-close"></i></a>
-															</td>
-														</tr>
+
 													</tbody>
 												</table>
 											</div>
@@ -1079,54 +990,56 @@
 		const cartTotal = document.getElementById("cart-total");
 
 		function renderCart() {
-			if (cart.length === 0) {
-				cartBody.innerHTML = `<tr><td colspan="5">Your cart is empty</td></tr>`;
-				cartTotal.textContent = 'Total: $0.00';
-				return;
-			}
+			const cart = JSON.parse(localStorage.getItem('cart')) || [];
+			const cartBody = document.getElementById('cart-body'); // tbody elementi
+			cartBody.innerHTML = "";
 
-			let html = "";
-			let total = 0;
+			let totalPrice = 0;
 
 			cart.forEach((item, index) => {
 				const itemTotal = item.price * item.quantity;
-				total += itemTotal;
+				totalPrice += itemTotal;
 
-				// Fallbacks for optional color/size
 				const color = item.color || 'Black';
-				const size = item.size || 'SL';
+				const size = item.size || 'M';
 
-				html += `
-        <tr>
-          <td class="product-thumbnail text-left">
-            <div class="single-product">
-              <div class="product-img">
-                <a href="single-product.html"><img src="${item.image}" alt="" /></a>
-              </div>
-              <div class="product-info">
-                <h4 class="post-title"><a class="text-light-black" href="#">${item.title}</a></h4>
-                <p class="mb-0">Color: ${color}</p>
-                <p class="mb-0">Size: ${size}</p>
-              </div>
-            </div>
-          </td>
-          <td class="product-price">$${item.price.toFixed(2)}</td>
-          <td class="product-quantity">
-            <div class="cart-plus-minus">
-              <input type="number" value="${item.quantity}" min="1" data-index="${index}" class="cart-plus-minus-box">
-            </div>
-          </td>
-          <td class="product-subtotal">$${itemTotal.toFixed(2)}</td>
-          <td class="product-remove">
-            <a href="#" onclick="removeItem(${index})"><i class="zmdi zmdi-close"></i></a>
-          </td>
-        </tr>
-      `;
+				const tr = document.createElement("tr");
+				tr.innerHTML = `
+      <td class="product-thumbnail text-left">
+        <div class="single-product" style="display: flex; align-items: center; gap: 15px;">
+          <div class="product-img" style="flex-shrink: 0; width: 80px;">
+            <a href="single-product.html">
+              <img src=${item.image} alt="${item.title}" style="max-width: 100%;" />
+            </a>
+          </div>
+          <div class="product-info">
+            <h4 class="post-title" style="margin-bottom: 5px;">
+              <a class="text-light-black" href="#">${item.title}</a>
+            </h4>
+            <p class="mb-0">Color: ${color}</p>
+            <p class="mb-0">Size: ${size}</p>
+          </div>
+        </div>
+      </td>
+      <td class="product-price">$${item.price.toFixed(2)}</td>
+      <td class="product-quantity">
+        <div class="cart-plus-minus">
+          <input type="number" value="${item.quantity}" min="1" data-index="${index}" class="cart-plus-minus-box" onchange="updateQuantity(${index}, this.value)">
+        </div>
+      </td>
+      <td class="product-subtotal">$${itemTotal.toFixed(2)}</td>
+      <td class="product-remove">
+        <a href="#" onclick="removeItem(${index})"><i class="zmdi zmdi-close"></i></a>
+      </td>
+    `;
+				cartBody.appendChild(tr);
 			});
 
-			cartBody.innerHTML = html;
-			cartTotal.textContent = `Total: $${total.toFixed(2)}`;
-			attachQtyListeners();
+			// Total qiymət göstərmək üçün varsa
+			const totalElement = document.getElementById('cart-total');
+			if (totalElement) {
+				totalElement.innerText = `$${totalPrice.toFixed(2)}`;
+			}
 		}
 
 		function removeItem(index) {
