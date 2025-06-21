@@ -108,6 +108,17 @@
 			background-color: #f0c14b;
 			color: #000;
 		}
+
+		.post-title {
+			height: 3em;
+			/* 2 satır kadar yüksek */
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			/* 2 satırda kes */
+			-webkit-box-orient: vertical;
+		}
 	</style>
 </head>
 
@@ -131,40 +142,19 @@
 									<li>
 										<a class="cart-icon" href="#">
 											<i class="zmdi zmdi-shopping-cart"></i>
-											<span>3</span>
+											<span id="cart-count-mini"></span>
 										</a>
 										<div class="mini-cart-brief text-left">
 											<div class="cart-items">
-												<p class="mb-0">You have <span>03 items</span> in your shopping bag</p>
+												<p class="mb-0">You have <span id="cart-count">03 items</span> in your
+													shopping bag</p>
 											</div>
-											<div class="all-cart-product clearfix">
-												<div class="single-cart clearfix">
-													<div class="cart-photo">
-														<a href="#"><img src="img/cart/1.jpg" alt="" /></a>
-													</div>
-													<div class="cart-info">
-														<h5><a href="#">dummy product name</a></h5>
-														<p class="mb-0">Price : $ 100.00</p>
-														<p class="mb-0">Qty : 02 </p>
-														<span class="cart-delete"><a href="#"><i
-																	class="zmdi zmdi-close"></i></a></span>
-													</div>
-												</div>
-												<div class="single-cart clearfix">
-													<div class="cart-photo">
-														<a href="#"><img src="img/cart/2.jpg" alt="" /></a>
-													</div>
-													<div class="cart-info">
-														<h5><a href="#">dummy product name</a></h5>
-														<p class="mb-0">Price : $ 300.00</p>
-														<p class="mb-0">Qty : 01 </p>
-														<span class="cart-delete"><a href="#"><i
-																	class="zmdi zmdi-close"></i></a></span>
-													</div>
-												</div>
+											<div class="all-cart-product clearfix" id="shopbag">
+
 											</div>
 											<div class="cart-totals">
-												<h5 class="mb-0">Total <span class="floatright">$500.00</span></h5>
+												<h5 class="mb-0">Total <span class="floatright"
+														id="cart-total">$500.00</span></h5>
 											</div>
 											<div class="cart-bottom  clearfix">
 												<a href="cart.html" class="button-one floatleft text-uppercase"
@@ -197,26 +187,26 @@
 								</ul>
 							</div>
 						</li>
-						
-						
+
+
 						<li><a href="#">pages</a>
 							<div class="sub-menu menu-scroll">
 								<ul>
 									<li class="menu-title">Page's</li>
 									<li><a href="shop.html">Shop</a></li>
 									<li><a href="shop-sidebar.html">Shop Sidebar</a></li>
-									
-									
-									
+
+
+
 									<li><a href="single-product.html">Single Product</a></li>
-									
+
 									<li><a href="cart.html">Shopping Cart</a></li>
 									<li><a href="wishlist.html">Wishlist</a></li>
-									
+
 								</ul>
 							</div>
 						</li>
-						
+
 					</ul>
 				</nav>
 			</div>
@@ -243,15 +233,15 @@
 										<ul>
 											<li><a href="shop.html">Shop</a></li>
 											<li><a href="shop-sidebar.html">Shop Sidebar</a></li>
-											
+
 											<li><a href="single-product.html">Single Product</a></li>
-											
+
 											<li><a href="cart.html">Shopping Cart</a></li>
 											<li><a href="wishlist.html">Wishlist</a></li>
-											
+
 										</ul>
 									</li>
-									
+
 								</ul>
 							</nav>
 						</div>
@@ -264,9 +254,7 @@
 		<section class="slider-area slider-style-2">
 			<div class="bend niceties preview-2">
 				<div id="ensign-nivoslider" class="slides">
-					<img src="img/slider/slider-2/1.jpg" alt="" title="#slider-direction-1" />
-					<img src="img/slider/slider-2/2.jpg" alt="" title="#slider-direction-2" />
-					<img src="img/slider/slider-2/3.jpg" alt="" title="#slider-direction-3" />
+
 				</div>
 				<!-- direction 1 -->
 				<div id="slider-direction-1" class="t-cn slider-direction">
@@ -354,41 +342,7 @@
 			</div>
 		</section>
 		<!-- SLIDER-AREA END -->
-		<!-- BANNER-AREA START -->
-		<div class="banner-area pt-80">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-5">
-						<!-- Single-banner start -->
-						<div class="single-banner banner-1 banner-4">
-							<a class="banner-thumb" href="#"><img src="img/banner/3.jpg" alt="" /></a>
-							<span class="pro-label new-label">new</span>
-							<span class="price">$50.00</span>
-							<div class="banner-brief">
-								<h2 class="banner-title"><a href="#">Product name</a></h2>
-								<p class="mb-0">Furniture</p>
-							</div>
-							<a href="#" class="button-one font-16px" data-text="Buy now">Buy now</a>
-						</div>
-						<!-- Single-banner end -->
-					</div>
-					<div class="col-md-7">
-						<!-- Single-banner start -->
-						<div class="single-banner banner-3">
-							<a class="banner-thumb" href="#"><img src="img/banner/4.jpg" alt="" /></a>
-							<div class="banner-brief">
-								<h2 class="banner-title">
-									<a class="text-uppercase" href="#">design by <br />hurst <br />modern
-										<br /><span>-2021</span></a>
-								</h2>
-							</div>
-						</div>
-						<!-- Single-banner end -->
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- BANNER-AREA END -->
+
 		<!-- PRODUCT-AREA START -->
 		<div class="product-area pt-80 pb-30 product-style-2">
 			<div class="container">
@@ -405,130 +359,7 @@
 			</div>
 		</div>
 		<!-- PRODUCT-AREA END -->
-		<!-- DISCOUNT-PRODUCT START -->
-		<div class="discount-product-area discount-2">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-md-8">
-						<div class="row">
-							<div class="discount-product-slider dots-bottom-right">
-								<!-- single-discount-product start -->
-								<div class="col-lg-12">
-									<div class="discount-product">
-										<div class="row">
-											<div class="col-lg-5 col-md-5 col-sm-6">
-												<a href="single-blog.html">
-													<img src="img/discount/5.jpg" alt="" />
-												</a>
-											</div>
-											<div class="col-lg-7 col-md-7 col-sm-6">
-												<div class="discount-info">
-													<h1 class="text-dark-red">Discount 50%</h1>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed does
-														eiusmodes tempor incididunt ut labore labore et labore et dolore
-														magna aliqua. Ut enim ad minim venim.</p>
-													<a class="button-2 text-dark-red text-uppercase" href="#">GET
-														DISCOUNT <i class="zmdi zmdi-long-arrow-right"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- single-discount-product end -->
-								<!-- single-discount-product start -->
-								<div class="col-lg-12">
-									<div class="discount-product">
-										<div class="row">
-											<div class="col-lg-5 col-md-5 col-sm-6">
-												<a href="single-blog.html">
-													<img src="img/discount/6.jpg" alt="" />
-												</a>
-											</div>
-											<div class="col-lg-7 col-md-7 col-sm-6">
-												<div class="discount-info">
-													<h1 class="text-dark-red">Discount 50%</h1>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed does
-														eiusmodes tempor incididunt ut labore labore et labore et dolore
-														magna aliqua. Ut enim ad minim venim.</p>
-													<a class="button-2 text-dark-red text-uppercase" href="#">GET
-														DISCOUNT <i class="zmdi zmdi-long-arrow-right"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- single-discount-product end -->
-								<!-- single-discount-product start -->
-								<div class="col-lg-12">
-									<div class="discount-product">
-										<div class="row">
-											<div class="col-lg-5 col-md-5 col-sm-6">
-												<a href="single-blog.html">
-													<img src="img/discount/7.jpg" alt="" />
-												</a>
-											</div>
-											<div class="col-lg-7 col-md-7 col-sm-6">
-												<div class="discount-info">
-													<h1 class="text-dark-red">Discount 50%</h1>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed does
-														eiusmodes tempor incididunt ut labore labore et labore et dolore
-														magna aliqua. Ut enim ad minim venim.</p>
-													<a class="button-2 text-dark-red text-uppercase" href="#">GET
-														DISCOUNT <i class="zmdi zmdi-long-arrow-right"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- single-discount-product end -->
-								<!-- single-discount-product start -->
-								<div class="col-lg-12">
-									<div class="discount-product">
-										<div class="row">
-											<div class="col-lg-5 col-md-5 col-sm-6">
-												<a href="single-blog.html">
-													<img src="img/discount/8.jpg" alt="" />
-												</a>
-											</div>
-											<div class="col-lg-7 col-md-7 col-sm-6">
-												<div class="discount-info">
-													<h1 class="text-dark-red">Discount 50%</h1>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed does
-														eiusmodes tempor incididunt ut labore labore et labore et dolore
-														magna aliqua. Ut enim ad minim venim.</p>
-													<a class="button-2 text-dark-red text-uppercase" href="#">GET
-														DISCOUNT <i class="zmdi zmdi-long-arrow-right"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- single-discount-product end -->
-							</div>
-						</div>
-					</div>
-					<!-- up-comming-product start -->
-					<div class="col-lg-4 col-md-4">
-						<div class="up-comming-product">
-							<div class="up-comming-img">
-								<a href="#"><img src="img/product/up-comming.jpg" alt="" /></a>
-							</div>
-							<div class="up-comming-info text-center">
-								<div class="up-comming-brief">
-									<h4 class="post-title"><a href="#">Indoor Furniture</a></h4>
-									<h4 class="comming-pro-price">$ 200.00</h4>
-								</div>
-								<div class="count-down">
-									<div data-countdown="2022/10/08"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- up-comming-product end -->
-				</div>
-			</div>
-		</div>
-		<!-- DISCOUNT-PRODUCT END -->
+
 		<!-- PURCHASE-ONLINE-AREA START -->
 		<div class="purchase-online-area pt-80 product-style-2">
 			<div class="container">
@@ -541,6 +372,16 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-12  text-center">
+						<!-- Widget-Search start -->
+						<aside class="widget widget-search mb-30">
+							<form id="search-form" onsubmit="return false;">
+								<input type="text" id="searchInput" placeholder="Search products..." style="margin-bottom: 20px; width: 100%; padding: 8px; font-size: 16px;" />
+								<button type="submit">
+									<i class="zmdi zmdi-search"></i>
+								</button>
+							</form>
+						</aside>
+						<!-- Widget-search end -->
 						<!-- Nav tabs -->
 						<ul class="tab-menu nav clearfix">
 							<li><a class="active" href="#new-arrivals" data-bs-toggle="tab">New Arrivals</a></li>
@@ -549,150 +390,22 @@
 							<li><a href="#discounts" data-bs-toggle="tab">Discounts</a></li> -->
 						</ul>
 					</div>
+
 					<div class="col-lg-12">
 						<!-- Tab panes -->
 						<div class="tab-content">
+
 							<div class="tab-pane active" id="new-arrivals">
 
 							</div>
+							<div id="pagination"></div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- PURCHASE-ONLINE-AREA END -->
-		<!-- BLGO-AREA START -->
-		<div class="blog-area blog-2 pt-50">
-			<div class="container">
-				<!-- Section-title start -->
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="section-title text-center">
-							<h2 class="title-border">From The Blog</h2>
-						</div>
-					</div>
-				</div>
-				<!-- Section-title end -->
-				<div class="row">
-					<!-- Single-blog start -->
-					<div class="col-lg-4 col-md-6">
-						<div class="single-blog mt-30">
-							<div class="blog-photo">
-								<a href="#"><img src="img/blog/3.jpg" alt="" /></a>
-								<div class="like-share text-center fix">
-									<a href="#"><i class="zmdi zmdi-favorite"></i><span>89 Like</span></a>
-									<a href="#"><i class="zmdi zmdi-comments"></i><span>59 Comments</span></a>
-									<a href="#"><i class="zmdi zmdi-share"></i><span>29 Share</span></a>
-								</div>
-							</div>
-							<div class="blog-info">
-								<div class="post-meta fix">
-									<div class="post-date floatleft"><span class="text-dark-red">30</span></div>
-									<div class="post-year floatleft">
-										<p class="text-uppercase text-dark-red mb-0">June, 2021</p>
-										<h4 class="post-title"><a href="#" tabindex="0">Farniture drawing 2021</a></h4>
-									</div>
-								</div>
-								<p>There are many variations of passages of Lorem Ipsum available, but the majority have
-									suffered If you are going to use a passage Lorem Ipsum, you alteration in some form.
-								</p>
-								<a href="#" class="button-2 text-dark-red">Read more...</a>
-							</div>
-						</div>
-					</div>
-					<!-- Single-blog end -->
-					<!-- Single-blog start -->
-					<div class="col-lg-4 col-md-6">
-						<div class="single-blog mt-30">
-							<div class="blog-photo">
-								<a href="#"><img src="img/blog/4.jpg" alt="" /></a>
-								<div class="like-share text-center fix">
-									<a href="#"><i class="zmdi zmdi-favorite"></i><span>89 Like</span></a>
-									<a href="#"><i class="zmdi zmdi-comments"></i><span>59 Comments</span></a>
-									<a href="#"><i class="zmdi zmdi-share"></i><span>29 Share</span></a>
-								</div>
-							</div>
-							<div class="blog-info">
-								<div class="post-meta fix">
-									<div class="post-date floatleft"><span class="text-dark-red">30</span></div>
-									<div class="post-year floatleft">
-										<p class="text-uppercase text-dark-red mb-0">June, 2021</p>
-										<h4 class="post-title"><a href="#" tabindex="0">Farniture drawing 2021</a></h4>
-									</div>
-								</div>
-								<p>There are many variations of passages of Lorem Ipsum available, but the majority have
-									suffered If you are going to use a passage Lorem Ipsum, you alteration in some form.
-								</p>
-								<a href="#" class="button-2 text-dark-red">Read more...</a>
-							</div>
-						</div>
-					</div>
-					<!-- Single-blog end -->
-					<!-- Single-blog start -->
-					<div class="col-lg-4 col-md-6">
-						<div class="single-blog mt-30">
-							<div class="blog-photo">
-								<a href="#"><img src="img/blog/5.jpg" alt="" /></a>
-								<div class="like-share text-center fix">
-									<a href="#"><i class="zmdi zmdi-favorite"></i><span>89 Like</span></a>
-									<a href="#"><i class="zmdi zmdi-comments"></i><span>59 Comments</span></a>
-									<a href="#"><i class="zmdi zmdi-share"></i><span>29 Share</span></a>
-								</div>
-							</div>
-							<div class="blog-info">
-								<div class="post-meta fix">
-									<div class="post-date floatleft"><span class="text-dark-red">30</span></div>
-									<div class="post-year floatleft">
-										<p class="text-uppercase text-dark-red mb-0">June, 2021</p>
-										<h4 class="post-title"><a href="#" tabindex="0">Farniture drawing 2021</a></h4>
-									</div>
-								</div>
-								<p>There are many variations of passages of Lorem Ipsum available, but the majority have
-									suffered If you are going to use a passage Lorem Ipsum, you alteration in some form.
-								</p>
-								<a href="#" class="button-2 text-dark-red">Read more...</a>
-							</div>
-						</div>
-					</div>
-					<!-- Single-blog end -->
-				</div>
-			</div>
-		</div>
-		<!-- BLGO-AREA END -->
-		<!-- BRAND-LOGO-AREA START -->
-		<div class="brand-logo-area pt-80">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="brand">
-							<div class="brand-slider">
-								<div class="single-brand">
-									<a href="https://themeforest.net/user/bootexperts/portfolio" target="_blank"><img
-											src="img/brand/1.png" alt="" /></a>
-								</div>
-								<div class="single-brand">
-									<a href="https://themeforest.net/user/codecarnival/portfolio" target="_blank"><img
-											src="img/brand/2.png" alt="" /></a>
-								</div>
-								<div class="single-brand">
-									<a href="https://themeforest.net/user/devitems/portfolio" target="_blank"><img
-											src="img/brand/3.png" alt="" /></a>
-								</div>
-								<div class="single-brand">
-									<a href="https://themeforest.net/user/hastech/portfolio" target="_blank"><img
-											src="img/brand/4.png" alt="" /></a>
-								</div>
-								<div class="single-brand">
-									<a href="https://psdrightsell.com/" target="_blank"><img src="img/brand/5.png"
-											alt="" /></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- BRAND-LOGO-AREA END -->
+
 		<!-- FOOTER START -->
 		<footer>
 			<!-- Footer-area start -->
@@ -878,151 +591,272 @@
 	<script src="js/vendor/modernizr-3.11.2.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-	<script>
-		const productSection = document.getElementById("new-arrivals")
-		fetch("https://fakestoreapi.com/products")
-			.then((response) => response.json())
-			.then((data) => {
-				let html = `<div class="row">`
-				for (product of data) {
-					html += `
-						<div class="col-xl-3 col-lg-4 col-md-6">
-										<div class="single-product">
-											<div class="product-img">
-												<span class="pro-label new-label">new</span>
-												<span class="pro-price-2">$ ${product.price}</span>
-												<a href="single-product.html"><img src=${product.image} alt="" /></a>
-											</div>
-											<div class="product-info clearfix text-center">
-												<div class="fix">
-													<h4 class="post-title"><a href="#">${product.title}e</a></h4>
-												</div>
-												<div class="fix">
-													<span class="pro-rating">
-														${creatRateElement(product.rating.rate)}
-														<span>${product.rating.rate}</span>
-													</span>
-												</div>
-												<div class="product-action clearfix">
-													<a href="wishlist.html" data-bs-toggle="tooltip"
-														data-placement="top" title="Wishlist"><i
-															class="zmdi zmdi-favorite-outline"></i></a>
-													<a href="#" data-bs-toggle="modal" data-bs-target="#productModal"
-														title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
-													<a href="#" data-bs-toggle="tooltip" data-placement="top"
-														title="Compare"><i class="zmdi zmdi-refresh"></i></a>
-													<a href="cart.html" class="add-to-cart"  data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-image="${product.image} data-bs-toggle="tooltip" data-placement="top"
-														title="Add To Cart"><i
-															class="zmdi zmdi-shopping-cart-plus"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>`
-				};
-				html += `</div>`;
-				productSection.innerHTML = html;
-			});
-		function creatRateElement(rate) {
-			let rateelements = '';
-			let primary = Math.floor(rate);
-			let dif = rate - primary;
-			for (let i = 0; i < primary; i++) {
-				rateelements += `<a href="#"><i class="zmdi zmdi-star"></i></a>`;
-			}
-			if (dif > 0) {
-				rateelements += `<a href="#"><i class="zmdi zmdi-star-half"></i></a>`;
-			}
-			let empty = 5 - Math.ceil(rate);
-			if (empty > 0) {
-				for (let i = 0; i < empty; i++) {
+<script>
+	const productSection = document.getElementById("new-arrivals");
+	const paginationSection = document.createElement("div"); // Sayfalama div'i oluşturuluyor
+	paginationSection.id = "pagination";
+	paginationSection.style.textAlign = "center";
+	paginationSection.style.marginTop = "20px";
+	productSection.after(paginationSection);
 
-					rateelements += `	<a href="#"><i class="zmdi zmdi-star-outline"></i></a>`;
-				}
-			}
-			return rateelements;
+	const searchInput = document.getElementById("searchInput");
 
-		}
+	const productsPerPage = 4;
+	let currentPage = 1;
+	let allProducts = [];
+	let filteredProducts = [];
 
-		featuredSection = document.getElementById("featured");
-
-		fetch("https://fakestoreapi.com/products")
-			.then((response) => response.json())
-			.then((data) => {
-				let html = '';
-				for (let product of data) {
-					html += `
-        <div class="single-product">
-          <div class="product-img">
-            <span class="pro-label new-label">new</span>
-            <span class="pro-price-2">$${product.price}</span>
-            <a href="#"><img src="${product.image}" alt="${product.title}" /></a>
-          </div>
-          <div class="product-info clearfix text-center">
-            <div class="fix">
-              <h4 class="post-title"><a href="#">${product.title}</a></h4>
-            </div>
-            <div class="fix">
-              <span class="pro-rating">
-                ${creatRateElement(product.rating.rate)}
-                <span>${product.rating.rate}</span>
-              </span>
-            </div>
-            <div class="product-action clearfix">
-              <a href="#" title="Wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
-              <a href="#" title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
-              <a href="#" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
-              <a href="#" title="Add To Cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-            </div>
-          </div>
-        </div>
-      `;
-				}
-				featuredSection.innerHTML = html;
-				featuredSection.classList.add('owl-carousel');
-
-				// Owl Carousel aktivləşdir
-				$('.product-slider.style-2.arrow-left-right').owlCarousel({
-					loop: true,
-					margin: 30,
-					nav: true,
-					dots: false,
-					// autoplay: false,
-					// autoplayTimeout: 3000,
-					responsive: {
-						0: { items: 1 },
-						576: { items: 2 },
-						768: { items: 3 },
-						992: { items: 4 }
-					}
-				});
-			});
-
-		function addToCart(product) {
-			let cart = JSON.parse(localStorage.getItem("cart")) || [];
-			const existing = cart.find(item => item.id == product.id);
-			if (existing) existing.quantity += 1;
-			else cart.push({ ...product, quantity: 1 });
-			localStorage.setItem("cart", JSON.stringify(cart));
-			
-		}
-
-
-
-		document.addEventListener("click", function (e) {
-			const btn = e.target.closest(".add-to-cart");
-			if (!btn) return;
-
-			e.preventDefault();
-			const product = {
-				id: btn.dataset.id,
-				title: btn.dataset.title,
-				price: parseFloat(btn.dataset.price),
-				image: btn.dataset.image
-			};
-			addToCart(product);
+	// Ürünleri API'dan çek ve başlat
+	fetch("https://fakestoreapi.com/products")
+		.then((response) => response.json())
+		.then((data) => {
+			allProducts = data;
+			filteredProducts = allProducts;  // Başlangıçta filtre yok
+			renderProducts();
+			renderPagination();
 		});
 
-	</script>
+	// Ürünleri render eden fonksiyon (şimdi filtreli listeyi kullanıyor)
+	function renderProducts() {
+		const start = (currentPage - 1) * productsPerPage;
+		const end = start + productsPerPage;
+		const pageProducts = filteredProducts.slice(start, end);
+
+		let html = `<div class="row">`;
+		for (const product of pageProducts) {
+			html += `
+			<div class="col-xl-3 col-lg-4 col-md-6">
+				<div class="single-product">
+					<div class="product-img">
+						<span class="pro-label new-label">new</span>
+						<span class="pro-price-2">$ ${product.price}</span>
+						<a href="single-product.html?id=${product.id}"><img src="${product.image}" alt="${product.title}" /></a>
+					</div>
+					<div class="product-info clearfix text-center">
+						<div class="fix">
+							<h4 class="post-title"><a href="#">${product.title}</a></h4>
+						</div>
+						<div class="fix">
+							<span class="pro-rating">
+								${creatRateElement(product.rating.rate)}
+								<span>${product.rating.rate}</span>
+							</span>
+						</div>
+						<div class="product-action clearfix">
+							<a href="wishlist.html" data-bs-toggle="tooltip" data-placement="top" title="Wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
+							<a href="#" data-bs-toggle="modal" data-bs-target="#productModal" title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
+							<a href="#" data-bs-toggle="tooltip" data-placement="top" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
+							<a href="cart.html" class="add-to-cart" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-image="${product.image}" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			`;
+		}
+		html += `</div>`;
+		productSection.innerHTML = html;
+	}
+
+	// Sayfalama butonlarını render eden fonksiyon (filtreli ürünlere göre)
+	function renderPagination() {
+		const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+
+		let html = '';
+		for (let i = 1; i <= totalPages; i++) {
+			if (i === currentPage) {
+				html += `<span style="margin: 0 5px; font-weight: bold; cursor:pointer;" data-page="${i}">${i}</span>`;
+			} else {
+				html += `<a href="#" style="margin: 0 5px;" data-page="${i}">${i}</a>`;
+			}
+		}
+
+		paginationSection.innerHTML = html;
+
+		// Butonlara tıklama olayı ekle
+		paginationSection.querySelectorAll("[data-page]").forEach(btn => {
+			btn.addEventListener("click", function (e) {
+				e.preventDefault();
+				const selectedPage = parseInt(this.getAttribute("data-page"));
+				if (selectedPage !== currentPage) {
+					currentPage = selectedPage;
+					renderProducts();
+					renderPagination();
+				}
+			});
+		});
+	}
+
+	// Rating yıldızlarını oluşturan fonksiyon
+	function creatRateElement(rate) {
+		let rateelements = '';
+		let primary = Math.floor(rate);
+		let dif = rate - primary;
+		for (let i = 0; i < primary; i++) {
+			rateelements += `<a href="#"><i class="zmdi zmdi-star"></i></a>`;
+		}
+		if (dif > 0) {
+			rateelements += `<a href="#"><i class="zmdi zmdi-star-half"></i></a>`;
+		}
+		let empty = 5 - Math.ceil(rate);
+		if (empty > 0) {
+			for (let i = 0; i < empty; i++) {
+				rateelements += `<a href="#"><i class="zmdi zmdi-star-outline"></i></a>`;
+			}
+		}
+		return rateelements;
+	}
+
+	// Search input'a yazıldıkça filtrele ve sayfayı 1 yap
+	searchInput.addEventListener("input", () => {
+		const query = searchInput.value.trim().toLowerCase();
+		currentPage = 1; // Arama yapınca sayfa 1'e dönsün
+		if (query === "") {
+			filteredProducts = allProducts;
+		} else {
+			filteredProducts = allProducts.filter(product =>
+				product.title.toLowerCase().includes(query)
+			);
+		}
+		renderProducts();
+		renderPagination();
+	});
+
+
+	// featuredSection kısmı aynen kalabilir (istersen benzer şekilde düzenleyebiliriz)
+	const featuredSection = document.getElementById("featured");
+
+	fetch("https://fakestoreapi.com/products")
+		.then((response) => response.json())
+		.then((data) => {
+			let html = '';
+			for (let product of data) {
+				html += `
+					<div class="single-product">
+						<div class="product-img">
+							<span class="pro-label new-label">new</span>
+							<span class="pro-price-2">$${product.price}</span>
+							<a href="#"><img src="${product.image}" alt="${product.title}" /></a>
+						</div>
+						<div class="product-info clearfix text-center">
+							<div class="fix">
+								<h4 class="post-title"><a href="#">${product.title}</a></h4>
+							</div>
+							<div class="fix">
+								<span class="pro-rating">
+									${creatRateElement(product.rating.rate)}
+									<span>${product.rating.rate}</span>
+								</span>
+							</div>
+							<div class="product-action clearfix">
+								<a href="#" title="Wishlist"><i class="zmdi zmdi-favorite-outline"></i></a>
+								<a href="#" title="Quick View"><i class="zmdi zmdi-zoom-in"></i></a>
+								<a href="#" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
+								<a href="#" title="Add To Cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
+							</div>
+						</div>
+					</div>
+				`;
+			}
+			featuredSection.innerHTML = html;
+			featuredSection.classList.add('owl-carousel');
+
+			// Owl Carousel aktivləşdir
+			$('.product-slider.style-2.arrow-left-right').owlCarousel({
+				loop: true,
+				margin: 30,
+				nav: true,
+				dots: false,
+				responsive: {
+					0: { items: 1 },
+					576: { items: 2 },
+					768: { items: 3 },
+					992: { items: 4 }
+				}
+			});
+		});
+
+	// Add to cart ve mini-cart fonksiyonları aynı kalabilir (aynı isimle 2 kez yazılmış, sen onu sadece 1 defa bırakabilirsin)
+
+	function addToCart(product) {
+		let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+		const existingIndex = cart.findIndex(p => p.id === product.id);
+		if (existingIndex !== -1) {
+			cart[existingIndex].quantity += 1;
+		} else {
+			product.quantity = 1;
+			cart.push(product);
+		}
+
+		localStorage.setItem("cart", JSON.stringify(cart));
+		updateMiniCart(); // Mini-cart görünümünü yenile
+	}
+
+	document.addEventListener("click", function (e) {
+		const btn = e.target.closest(".add-to-cart");
+		if (!btn) return;
+
+		e.preventDefault();
+		const product = {
+			id: btn.dataset.id,
+			title: btn.dataset.title,
+			price: parseFloat(btn.dataset.price),
+			image: btn.dataset.image
+		};
+		addToCart(product);
+	});
+
+	// Mini-cart görünümünü yenileyen fonksiyon
+	function updateMiniCart() {
+		const cart = JSON.parse(localStorage.getItem("cart")) || [];
+		const shopBag = document.getElementById("shopbag");
+		const countmini = document.getElementById("cart-count-mini");
+		const itemCountText = document.querySelector(".cart-items span");
+		const cartTotalText = document.querySelector(".cart-totals span");
+
+		if (!shopBag || !itemCountText || !cartTotalText) return;
+
+		let html = '';
+		let total = 0;
+
+		cart.forEach((item, index) => {
+			const itemTotal = item.price * item.quantity;
+			total += itemTotal;
+
+			html += `
+				<div class="single-cart clearfix" style="display: flex; gap: 10px; align-items: center;">
+					<div class="cart-photo" style="flex: 0 0 70px;">
+						<a href="#"><img src=${item.image} alt="${item.title}" style="width: 70px; height: 70px; object-fit: contain;" /></a>
+					</div>
+					<div class="cart-info" style="flex: 1;">
+						<h5><a href="#">${item.title}</a></h5>
+						<p class="mb-0">Price : $${item.price.toFixed(2)}</p>
+						<p class="mb-0">Qty : ${item.quantity}</p>
+						<span class="cart-delete"><a href="#" onclick="removeFromMiniCart(${index})"><i class="zmdi zmdi-close"></i></a></span>
+					</div>
+				</div>
+			`;
+		});
+
+		shopBag.innerHTML = html;
+		itemCountText.textContent = `${cart.length} items`;
+		cartTotalText.textContent = `$${total.toFixed(2)}`;
+		countmini.innerHTML = `${cart.length}`;
+	}
+
+	// Mini-carttan ürün silme fonksiyonu
+	function removeFromMiniCart(index) {
+		let cart = JSON.parse(localStorage.getItem("cart")) || [];
+		cart.splice(index, 1);
+		localStorage.setItem("cart", JSON.stringify(cart));
+		updateMiniCart();
+	}
+
+	// Sayfa yüklendiğinde mini-cart güncelle
+	window.addEventListener("DOMContentLoaded", () => {
+		updateMiniCart();
+	});
+</script>
 </body>
 
 <!-- Mirrored from template.hasthemes.com/hurst-v1/hurst/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Jun 2025 07:38:13 GMT -->
